@@ -8,7 +8,10 @@ export function Home() {
   return (
     <>
       <Logo />
-      <Center width="100%">
+      <Center 
+        width="100%"
+        pl={10}
+        pr={10}>
         <Text
           fontSize={30}
           color="black"

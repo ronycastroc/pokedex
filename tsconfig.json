@@ -4,7 +4,8 @@
     "paths": {
       "@*": ["*"],
       "@pages/*": ["src/pages/*"],
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@services/*": ["src/services/*"]
     },
     "target": "ESNext",
     "useDefineForClassFields": true,
