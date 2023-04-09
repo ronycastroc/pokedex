@@ -28,7 +28,6 @@ export function Card({ pokemons }: CardProps) {
           bg="linear-gradient(to bottom, #FFCE31, #f9f9f1 70%)"
           w={200}
           h={250}
-          mb={10}
           mt={10}
           borderRadius={10}
           _hover={{ transform: "scale(1.1)", transition: "transform 0.4s" }}
