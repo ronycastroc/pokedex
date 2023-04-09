@@ -1,23 +1,5 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
-
-type Type = {
-  slot?: number;
-  type: {
-    name: string;
-    url: string
-  }
-};
-
-type Pokemon = {
-  id: number;
-  name: string;
-  image: string
-  types: Type[];
-};
-
-type CardProps = {
-  pokemons: Pokemon[];
-};
+import { CardProps, Pokemon, Type } from "@protocols";
 
 export function Card({ pokemons }: CardProps) {
   return (
@@ -50,7 +32,7 @@ export function Card({ pokemons }: CardProps) {
               <Text
                 color="black"
                 fontSize={22}>
-                Nº{pokemon.id}
+                nº{pokemon.id}
               </Text>
               <Text
                 color="black"

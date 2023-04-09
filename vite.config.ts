@@ -10,6 +10,8 @@ export default defineConfig({
       "@pages": path.resolve(__dirname, "src/pages"),
       "@components": path.resolve(__dirname, "src/components"),
       "@services": path.resolve(__dirname, "src/services"),
+      "@protocols": path.resolve(__dirname, "src/protocols"),
+      "@store": path.resolve(__dirname, "src/store"),
     },
   },
   plugins: [react()],

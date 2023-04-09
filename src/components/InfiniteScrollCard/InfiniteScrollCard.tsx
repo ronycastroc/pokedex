@@ -3,19 +3,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { getPokemons } from "@services";
 import { Card } from "@components";
 import { Flex, Spinner } from "@chakra-ui/react";
-
-type Props = {
-  initialPokemonCount: number;
-  fetchPokemonCount: number;
-};
-
-type Type = {
-  slot: number;
-  type: {
-    name: string;
-    url: string;
-  }
-};
+import { Props, Type } from "@protocols";
 
 export function InfiniteScrollCard({ initialPokemonCount, fetchPokemonCount }: Props) {
   const [pokemons, setPokemons] = useState<Array<{
