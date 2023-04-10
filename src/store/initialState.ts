@@ -1,7 +1,7 @@
-import { Pokemon } from "@protocols";
+import { PokemonState } from "@protocols";
 
-export const initialState: Pokemon = {
-  id: 0,
-  name: "",
-  image: "",
+const favoritePokemonsFromLocalStorage = localStorage.getItem("favoritePokemons");
+
+export const initialState: PokemonState = {
+  favoritePokemons: favoritePokemonsFromLocalStorage ? JSON.parse(favoritePokemonsFromLocalStorage) : [],
 };

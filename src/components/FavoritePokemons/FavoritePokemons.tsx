@@ -56,7 +56,7 @@ export function FavoritePokemons() {
               key={index}
               alignItems="center"
               justifyContent="space-around"
-              w="20%"
+              w="270px"
               m="0 auto">
               <Text fontSize={25} color="black">nº{pokemon.id}</Text>
               <Text fontSize={25} color="black">{pokemon.name}</Text>

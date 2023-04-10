@@ -1,12 +1,7 @@
-import { PokemonState, Pokemon } from "@protocols";
+import {  Pokemon } from "@protocols";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { store } from "@store";
-
-const favoritePokemonsFromLocalStorage = localStorage.getItem("favoritePokemons");
-
-const initialState: PokemonState = {
-  favoritePokemons: favoritePokemonsFromLocalStorage ? JSON.parse(favoritePokemonsFromLocalStorage) : [],
-};
+import { initialState } from "@store";
 
 export const pokemonSlice = createSlice({
   name: "pokemon",

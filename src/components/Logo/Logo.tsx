@@ -11,7 +11,7 @@ export function Logo() {
       mt={5}>
       <Image
         src={logo}
-        alt="logo"
+        alt="pokedex-logo"
         w={250} />
     </Flex>
   );
