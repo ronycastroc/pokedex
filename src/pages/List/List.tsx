@@ -14,7 +14,7 @@ export function List() {
         </ButtonComponent>
       </Box>
       <Center mt={3}>
-        <Text fontSize={30}>LISTA</Text>
+        <Text fontSize={30}>Pokemon List</Text>
       </Center>
       
       <InfiniteScrollCard initialPokemonCount={20} fetchPokemonCount={20} />      

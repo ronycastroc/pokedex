@@ -1,4 +1,4 @@
-import { ButtonComponent, Logo } from "@components";
+import { ButtonComponent, FavoritePokemons, Logo } from "@components";
 import { Text, Center } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
@@ -16,16 +16,18 @@ export function Home() {
           fontSize={30}
           color="black"
           mt={4}>
-          Olá, seja bem vindo ao seu pokedéx, clique no botão para ver a lista de pokemons.
+          Hello, welcome to your pokédex, click on the button to see the list of pokemons.
         </Text>
       </Center>
       <Center 
         width="100%"
-        mt={8}>
+        mt={5}>
         <ButtonComponent onClick={() => navigate("/list")}>
-          Lista
+          List
         </ButtonComponent>
       </Center>
+      
+      <FavoritePokemons />
     </>
   );
 }
