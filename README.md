@@ -22,7 +22,13 @@ npm run dev
 ```
 
 4. Acess the localhost link
-
+```
 http://localhost:5173/
+```
+5. To run the tests
+
+```
+npm run test
+```
 
 
