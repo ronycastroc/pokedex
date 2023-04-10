@@ -11,6 +11,7 @@ export type Pokemon = {
   name: string;
   image: string
   types?: Type[];
+  isFavorited?: boolean;
 };
 
 export type CardProps = {

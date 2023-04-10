@@ -12,6 +12,7 @@ export default defineConfig({
       "@services": path.resolve(__dirname, "src/services"),
       "@protocols": path.resolve(__dirname, "src/protocols"),
       "@store": path.resolve(__dirname, "src/store"),
+      "@hooks": path.resolve(__dirname, "src/hooks"),
     },
   },
   plugins: [react()],

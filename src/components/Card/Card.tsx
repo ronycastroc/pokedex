@@ -1,7 +1,30 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { StarIcon } from "@chakra-ui/icons";
 import { CardProps, Pokemon, Type } from "@protocols";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState, addFavoritePokemon, removeFavoritePokemon } from "@store";
+import { useLocalStorage } from "@hooks";
+import { useEffect } from "react";
 
 export function Card({ pokemons }: CardProps) {
+  const dispatch = useDispatch();
+  const [storedFavoritePokemons, setStoredFavoritePokemons] = useLocalStorage("favoritePokemons", []);
+  const { favoritePokemons } = useSelector((state: RootState) => state.pokemon);
+
+  useEffect(() => {
+    setStoredFavoritePokemons(favoritePokemons);
+  }, [favoritePokemons, setStoredFavoritePokemons]);
+
+  function handleFavorite(pokemon: Pokemon) {
+    const index = favoritePokemons.findIndex(p => p.id === pokemon.id);
+
+    if (index !== -1) {
+      dispatch(removeFavoritePokemon(pokemon.id));
+    } else {
+      dispatch(addFavoritePokemon(pokemon));
+    }
+  };
+
   return (
     <>
       {pokemons?.map((pokemon: Pokemon, index: number) => (
@@ -14,7 +37,19 @@ export function Card({ pokemons }: CardProps) {
           borderRadius={10}
           _hover={{ transform: "scale(1.1)", transition: "transform 0.4s" }}
           cursor="pointer"
-          position="relative">
+          position="relative"
+          onClick={() => handleFavorite(pokemon)}
+          border={
+            favoritePokemons.some((p) => p.id === pokemon.id)
+              ? "3px solid #3a3132"
+              : undefined
+          }>
+          {favoritePokemons.some((p) => p.id === pokemon.id) ?
+            <StarIcon
+              position="absolute"
+              top={2}
+              right={2} />
+            : undefined}
           <Image
             src={pokemon.image}
             alt={pokemon.name}
@@ -68,4 +103,4 @@ export function Card({ pokemons }: CardProps) {
       ))}
     </>
   );
-}
+};

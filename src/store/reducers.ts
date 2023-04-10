@@ -1,8 +1,11 @@
 import { PokemonState, Pokemon } from "@protocols";
-import { createSlice, PayloadAction, configureStore } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { store } from "@store";
+
+const favoritePokemonsFromLocalStorage = localStorage.getItem("favoritePokemons");
 
 const initialState: PokemonState = {
-  favoritePokemons: [],
+  favoritePokemons: favoritePokemonsFromLocalStorage ? JSON.parse(favoritePokemonsFromLocalStorage) : [],
 };
 
 export const pokemonSlice = createSlice({
@@ -19,12 +22,6 @@ export const pokemonSlice = createSlice({
 });
 
 export const { addFavoritePokemon, removeFavoritePokemon } = pokemonSlice.actions;
-
-export const store = configureStore({
-  reducer: {
-    pokemon: pokemonSlice.reducer,
-  },
-});
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
