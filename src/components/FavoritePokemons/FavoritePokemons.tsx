@@ -32,7 +32,7 @@ export function FavoritePokemons() {
               alignItems="center"
               justifyContent="center">
               <Text fontSize={25} color="black">nº{pokemon.id}</Text>
-              <Text fontSize={25} color="black">{pokemon.name}</Text>
+              <Text fontSize={25} ml={5} color="black">{pokemon.name}</Text>
               <Image 
                 src={pokemon.image} 
                 alt={pokemon.name}
