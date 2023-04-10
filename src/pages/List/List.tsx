@@ -9,15 +9,21 @@ export function List() {
     <>
       <Logo />
       <Box ml={10} mt={10} >
-        <ButtonComponent  onClick={() => navigate("/")}>
+        <ButtonComponent onClick={() => navigate("/")}>
           Home
         </ButtonComponent>
       </Box>
-      <Center mt={3}>
+      <Center 
+        w="100%"
+        bg="white"
+        mt={5}
+        borderTop="1px solid #3a3132"
+        borderBottom="1px solid #3a3132"
+        justifyContent="center">
         <Text fontSize={30}>Pokemon List</Text>
       </Center>
-      
-      <InfiniteScrollCard initialPokemonCount={20} fetchPokemonCount={20} />      
+
+      <InfiniteScrollCard initialPokemonCount={20} fetchPokemonCount={20} />
     </>
   );
 }

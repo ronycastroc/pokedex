@@ -8,8 +8,7 @@ export function Logo() {
       height={100}
       alignItems="center"
       justifyContent="center"
-      mt={5}
-    >
+      mt={5}>
       <Image
         src={logo}
         alt="logo"
