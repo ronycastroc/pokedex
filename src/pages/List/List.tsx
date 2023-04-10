@@ -23,7 +23,7 @@ export function List() {
         <Text fontSize={30}>Pokemon List</Text>
       </Center>
 
-      <InfiniteScrollCard initialPokemonCount={20} fetchPokemonCount={20} />
+      <InfiniteScrollCard data-testid="infinite-scroll" initialPokemonCount={20} fetchPokemonCount={20} />
     </>
   );
 }
